@@ -1,6 +1,7 @@
 from setuptools import find_packages,setup   # Here we are using a inbuild module to import find function and setup model
 from typing import List      # We are using list function from the typing module to convert the string into list
 HYPEN_E_DOT='-e.'   # As this symbol is present in the requirement.txt to remove that symbol we are creating a constant
+ # As the -e. is connecting both the setup.py and requirement.txt that is why we are taking -e.
 def get_requirements(file_path:str)->List[str]:           # Here we are defining a function that will help us install all the modules that will present in the requirement.txt to download in any devices 
      """
      this function will return the list of requirements the above code is first we will define a path that will convert it in to list from string
@@ -15,10 +16,10 @@ def get_requirements(file_path:str)->List[str]:           # Here we are defining
      return requirements # returning the stored value by return function 
  
 setup(      # Setting up the setup.py to set the below functionality 
-name ='DSproject',
+name ='DSproject', # this will show in the DSeoject.info
 version='0.0.11',
 author='Rashed',
 author_email='Maaz53425@gmail.com',
-packages=find_packages(),
-install_requires=get_requirements('requirements.txt')
+packages=find_packages(), # here all the packages that are stored in the package folder gets installed
+install_requires=get_requirements('requirements.txt') # here the packages gets checked if installed or not
 )
